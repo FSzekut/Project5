@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 
-car_data = pd.read_csv(r'..\vehicles.csv')  # lendo os dados
+car_data = pd.read_csv('vehicles.csv')  # lendo os dados
 fig = px.histogram(car_data, x="odometer")  # criar um histograma
 
 st.header("Histograma de Odometro dos Veículos")  # título da aplicação
