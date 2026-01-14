@@ -16,19 +16,14 @@ with aba1:  # criando uma aba
           
   if hist_button: # se o botão for clicado
     # escrever uma mensagem
-      st.write('Criando o histograma')
-              
-              # criar um histograma
-      fig = px.histogram(car_data, x="odometer")      
-          
-              # exibir um gráfico Plotly interativo
+      st.write('Criando o histograma')  # criar um histograma
+      fig = px.histogram(car_data, x="odometer") # exibir um gráfico Plotly interativo
       st.plotly_chart(fig, width='content')
 
 with aba2:  # criando outra aba
-  build_histogram = st.checkbox('Criar um histograma')
+  build_dispercion = st.checkbox('Criar um graáfico de dispersão') # criar uma caixa de seleção
 
-  if build_histogram: # se a caixa de seleção for selecionada
-    st.write('Criando o histograma')
-    fig = px.histogram(car_data, x="odometer")      
-    st.plotly_chart(fig, width='content')    
-    
+  if build_dispercion: # se a caixa de seleção for selecionada
+    st.write('Criando o grafico de dispersão')
+    fig = px.scatter(car_data, x="odometer", y="price") # criar um gráfico de dispersão
+    st.plotly_chart(fig, width='content') # exibindo o gráfico
